@@ -169,8 +169,6 @@ export default function CataloguesPage() {
                       style={{
                         position: "relative",
                         height: "100%",
-                        display: "flex",
-                        flexDirection: "column",
                         padding: "26px 30px"
                       }}
                     >
@@ -186,8 +184,7 @@ export default function CataloguesPage() {
                           fontSize: "13px",
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.85)",
-                          marginBottom: "180px"
+                          color: "rgba(255,255,255,0.85)"
                         }}
                       >
                         Catalogue
@@ -195,9 +192,11 @@ export default function CataloguesPage() {
 
                       <div
                         style={{
-                          maxWidth: "360px",
-                          marginTop: "auto",
-                          marginBottom: "18px"
+                          position: "absolute",
+                          left: "30px",
+                          right: "30px",
+                          bottom: "72px",
+                          maxWidth: "360px"
                         }}
                       >
                         <div
@@ -212,8 +211,8 @@ export default function CataloguesPage() {
 
                         <h2
                           style={{
-                            fontSize: "24px",
-                            lineHeight: 1.2,
+                            fontSize: "22px",
+                            lineHeight: 1.18,
                             margin: 0,
                             wordBreak: "break-word"
                           }}
