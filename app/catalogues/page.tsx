@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const catalogues = [
   {
@@ -31,6 +31,14 @@ const catalogues = [
 
 export default function CataloguesPage() {
   const [openPreview, setOpenPreview] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth <= 900);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
     <main
@@ -39,7 +47,7 @@ export default function CataloguesPage() {
         background:
           "radial-gradient(circle at top left, rgba(110,110,110,0.18), transparent 25%), linear-gradient(135deg, #030303 0%, #0f0f10 45%, #19191b 100%)",
         color: "white",
-        padding: "32px 24px 48px",
+        padding: isMobile ? "20px 14px 36px" : "32px 24px 48px",
         fontFamily: "Arial, sans-serif"
       }}
     >
@@ -49,8 +57,8 @@ export default function CataloguesPage() {
             border: "1px solid rgba(255,255,255,0.08)",
             background: "rgba(255,255,255,0.04)",
             borderRadius: "28px",
-            padding: "28px 32px 36px",
-            marginBottom: "28px",
+            padding: isMobile ? "20px 18px 24px" : "28px 32px 36px",
+            marginBottom: "24px",
             backdropFilter: "blur(10px)",
             boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
           }}
@@ -59,44 +67,44 @@ export default function CataloguesPage() {
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              marginBottom: "28px",
+              alignItems: isMobile ? "flex-start" : "center",
+              gap: "16px",
+              marginBottom: "24px",
               flexWrap: "wrap"
             }}
           >
-            <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap" }}>
               <img
                 src="/images/subzero-logo.png"
                 alt="Sub Zero"
-                style={{ height: "42px", objectFit: "contain" }}
+                style={{ height: isMobile ? "32px" : "42px", objectFit: "contain" }}
               />
               <img
                 src="/images/castle-logo.png"
                 alt="Castle"
-                style={{ height: "42px", objectFit: "contain" }}
+                style={{ height: isMobile ? "32px" : "42px", objectFit: "contain" }}
               />
             </div>
 
             <img
               src="/images/pvr-logo.png"
               alt="PVR Controls"
-              style={{ height: "42px", objectFit: "contain" }}
+              style={{ height: isMobile ? "32px" : "42px", objectFit: "contain" }}
             />
           </div>
 
           <div
             style={{
               display: "inline-block",
-              padding: "8px 14px",
+              padding: isMobile ? "7px 12px" : "8px 14px",
               borderRadius: "999px",
               border: "1px solid rgba(255,255,255,0.08)",
               background: "rgba(255,255,255,0.04)",
               color: "rgba(255,255,255,0.65)",
-              fontSize: "12px",
+              fontSize: isMobile ? "11px" : "12px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              marginBottom: "18px"
+              marginBottom: "16px"
             }}
           >
             Product Library
@@ -104,7 +112,7 @@ export default function CataloguesPage() {
 
           <h1
             style={{
-              fontSize: "52px",
+              fontSize: isMobile ? "38px" : "52px",
               lineHeight: 1.08,
               margin: 0,
               maxWidth: "900px"
@@ -133,14 +141,14 @@ export default function CataloguesPage() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "minmax(420px, 520px) 1fr",
+                    gridTemplateColumns: isMobile ? "1fr" : "minmax(420px, 520px) 1fr",
                     alignItems: "stretch"
                   }}
                 >
                   <div
                     style={{
                       position: "relative",
-                      minHeight: "420px",
+                      minHeight: isMobile ? "360px" : "420px",
                       overflow: "hidden"
                     }}
                   >
@@ -169,7 +177,7 @@ export default function CataloguesPage() {
                       style={{
                         position: "relative",
                         height: "100%",
-                        padding: "26px 30px"
+                        padding: isMobile ? "20px" : "26px 30px"
                       }}
                     >
                       <div
@@ -177,11 +185,11 @@ export default function CataloguesPage() {
                           display: "inline-flex",
                           alignItems: "center",
                           width: "fit-content",
-                          padding: "10px 18px",
+                          padding: isMobile ? "8px 14px" : "10px 18px",
                           borderRadius: "999px",
                           border: "1px solid rgba(255,255,255,0.12)",
                           background: "rgba(255,255,255,0.08)",
-                          fontSize: "13px",
+                          fontSize: isMobile ? "12px" : "13px",
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
                           color: "rgba(255,255,255,0.85)"
@@ -193,15 +201,15 @@ export default function CataloguesPage() {
                       <div
                         style={{
                           position: "absolute",
-                          left: "30px",
-                          right: "30px",
-                          bottom: "72px",
-                          maxWidth: "360px"
+                          left: isMobile ? "20px" : "30px",
+                          right: isMobile ? "20px" : "30px",
+                          bottom: isMobile ? "34px" : "72px",
+                          maxWidth: isMobile ? "unset" : "360px"
                         }}
                       >
                         <div
                           style={{
-                            fontSize: "14px",
+                            fontSize: isMobile ? "13px" : "14px",
                             color: "rgba(255,255,255,0.75)",
                             marginBottom: "10px"
                           }}
@@ -211,7 +219,7 @@ export default function CataloguesPage() {
 
                         <h2
                           style={{
-                            fontSize: "22px",
+                            fontSize: isMobile ? "20px" : "22px",
                             lineHeight: 1.18,
                             margin: 0,
                             wordBreak: "break-word"
@@ -223,10 +231,10 @@ export default function CataloguesPage() {
                     </div>
                   </div>
 
-                  <div style={{ padding: "30px" }}>
+                  <div style={{ padding: isMobile ? "20px" : "30px" }}>
                     <p
                       style={{
-                        fontSize: "16px",
+                        fontSize: isMobile ? "15px" : "16px",
                         lineHeight: 1.8,
                         color: "rgba(255,255,255,0.68)",
                         maxWidth: "760px",
@@ -241,7 +249,8 @@ export default function CataloguesPage() {
                         display: "flex",
                         flexWrap: "wrap",
                         gap: "12px",
-                        marginTop: "22px"
+                        marginTop: "22px",
+                        flexDirection: isMobile ? "column" : "row"
                       }}
                     >
                       <a
@@ -252,6 +261,7 @@ export default function CataloguesPage() {
                       >
                         <button
                           style={{
+                            width: isMobile ? "100%" : "auto",
                             borderRadius: "14px",
                             padding: "14px 18px",
                             border: "1px solid rgba(255,255,255,0.08)",
@@ -268,6 +278,7 @@ export default function CataloguesPage() {
                       <a href={item.pdf} download style={{ textDecoration: "none" }}>
                         <button
                           style={{
+                            width: isMobile ? "100%" : "auto",
                             borderRadius: "14px",
                             padding: "14px 18px",
                             border: "1px solid rgba(255,255,255,0.08)",
@@ -286,6 +297,7 @@ export default function CataloguesPage() {
                           setOpenPreview((current) => (current === item.id ? null : item.id))
                         }
                         style={{
+                          width: isMobile ? "100%" : "auto",
                           borderRadius: "14px",
                           padding: "14px 18px",
                           border: "1px solid rgba(255,255,255,0.08)",
@@ -314,7 +326,7 @@ export default function CataloguesPage() {
                           title={item.title}
                           style={{
                             width: "100%",
-                            height: "70vh",
+                            height: isMobile ? "55vh" : "70vh",
                             border: "none",
                             background: "white"
                           }}
