@@ -148,7 +148,7 @@ export default function CataloguesPage() {
                   <div
                     style={{
                       position: "relative",
-                      minHeight: isMobile ? "430px" : "420px",
+                      minHeight: isMobile ? "500px" : "420px",
                       overflow: "hidden"
                     }}
                   >
@@ -203,8 +203,8 @@ export default function CataloguesPage() {
                           position: "absolute",
                           left: isMobile ? "20px" : "30px",
                           right: isMobile ? "20px" : "30px",
-                          bottom: isMobile ? "26px" : "72px",
-                          maxWidth: isMobile ? "unset" : "360px"
+                          bottom: isMobile ? "90px" : "72px",
+                          maxWidth: isMobile ? "300px" : "360px"
                         }}
                       >
                         <div
@@ -219,8 +219,8 @@ export default function CataloguesPage() {
 
                         <h2
                           style={{
-                            fontSize: isMobile ? "18px" : "22px",
-                            lineHeight: 1.2,
+                            fontSize: isMobile ? "17px" : "22px",
+                            lineHeight: 1.18,
                             margin: 0,
                             wordBreak: "break-word"
                           }}
