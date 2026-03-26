@@ -1,69 +1,38 @@
-"use client";
-
-import { useState } from "react";
-
 const catalogues = [
   {
     title: "Industrial & Commercial Refrigeration",
-    pdf: "PASTE_PDF_LINK_HERE_1"
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/industrial-and-commercial-refrigeration.pdf"
   },
   {
     title: "Process Controllers & Automation",
-    pdf: "PASTE_PDF_LINK_HERE_2"
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/process-controllers-and-automation.pdf"
   },
   {
     title: "Castle Ammonia Valves",
-    pdf: "PASTE_PDF_LINK_HERE_3"
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/castle-ammonia-valves.pdf"
   }
 ];
 
 export default function Catalogues() {
-  const [active, setActive] = useState(null);
-
   return (
-    <main style={{ padding: "40px", maxWidth: "1200px", margin: "auto" }}>
-      <h1 style={{ fontSize: "32px", marginBottom: "30px" }}>
-        Product Catalogues
-      </h1>
+    <main style={{ padding: "40px", color: "white" }}>
+      <h1>Product Catalogues</h1>
 
-      {catalogues.map((cat, index) => (
-        <div
-          key={index}
-          style={{
-            border: "1px solid #333",
-            borderRadius: "12px",
-            padding: "20px",
-            marginBottom: "20px",
-            background: "#111"
-          }}
-        >
-          <h2>{cat.title}</h2>
+      {catalogues.map((item, index) => (
+        <div key={index} style={{ marginBottom: "30px" }}>
+          <h2>{item.title}</h2>
 
-          <div style={{ marginTop: "10px", display: "flex", gap: "10px" }}>
-            <a href={cat.pdf} target="_blank">
-              <button>View</button>
-            </a>
+          <a href={item.pdf} target="_blank">
+            <button>View</button>
+          </a>
 
-            <a href={cat.pdf} download>
-              <button>Download</button>
-            </a>
+          <a href={item.pdf} download>
+            <button>Download</button>
+          </a>
 
-            <button onClick={() => setActive(active === index ? null : index)}>
-              {active === index ? "Hide Preview" : "Preview"}
-            </button>
-          </div>
-
-          {active === index && (
-            <iframe
-              src={cat.pdf}
-              style={{
-                width: "100%",
-                height: "600px",
-                marginTop: "20px",
-                borderRadius: "10px"
-              }}
-            />
-          )}
+          <a href={item.pdf} target="_blank">
+            <button>Preview</button>
+          </a>
         </div>
       ))}
     </main>
