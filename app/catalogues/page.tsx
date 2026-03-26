@@ -1,40 +1,382 @@
+"use client";
+
+import { useState } from "react";
+
 const catalogues = [
   {
+    id: "refrigeration",
     title: "Industrial & Commercial Refrigeration",
-    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/industrial-and-commercial-refrigeration.pdf"
+    description:
+      "Controllers, panels, monitoring systems, and solutions for cold rooms, refrigeration systems, and industrial cooling applications.",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/industrial-and-commercial-refrigeration.pdf",
+    image: "/images/refrigeration.jpg"
   },
   {
+    id: "automation",
     title: "Process Controllers & Automation",
-    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/process-controllers-and-automation.pdf"
+    description:
+      "A consolidated catalogue of process controllers, automation products, HMIs, PLC solutions, and industrial control devices.",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/process-controllers-and-automation.pdf",
+    image: "/images/process.jpg"
   },
   {
+    id: "castle",
     title: "Castle Ammonia Valves",
-    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/castle-ammonia-valves.pdf"
+    description:
+      "Product catalogue covering Castle ammonia valves and related solutions for industrial refrigeration and ammonia-based systems.",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/castle-ammonia-valves.pdf",
+    image: "/images/castle.jpg"
   }
 ];
 
-export default function Catalogues() {
+export default function CataloguesPage() {
+  const [openPreview, setOpenPreview] = useState<string | null>(null);
+
   return (
-    <main style={{ padding: "40px", color: "white" }}>
-      <h1>Product Catalogues</h1>
+    <main
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at top left, rgba(110,110,110,0.18), transparent 25%), linear-gradient(135deg, #030303 0%, #0f0f10 45%, #19191b 100%)",
+        color: "white",
+        padding: "48px 24px",
+        fontFamily: "Arial, sans-serif"
+      }}
+    >
+      <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+        <section
+          style={{
+            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(255,255,255,0.04)",
+            borderRadius: "28px",
+            padding: "32px",
+            marginBottom: "28px",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
+          }}
+        >
+          <div
+            style={{
+              display: "inline-block",
+              padding: "8px 14px",
+              borderRadius: "999px",
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: "rgba(255,255,255,0.04)",
+              color: "rgba(255,255,255,0.65)",
+              fontSize: "12px",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              marginBottom: "18px"
+            }}
+          >
+            Product Library
+          </div>
 
-      {catalogues.map((item, index) => (
-        <div key={index} style={{ marginBottom: "30px" }}>
-          <h2>{item.title}</h2>
+          <h1
+            style={{
+              fontSize: "52px",
+              lineHeight: 1.08,
+              margin: 0,
+              maxWidth: "900px"
+            }}
+          >
+            Explore all catalogues from one clean, premium single-page experience.
+          </h1>
 
-          <a href={item.pdf} target="_blank">
-            <button>View</button>
-          </a>
+          <p
+            style={{
+              marginTop: "18px",
+              color: "rgba(255,255,255,0.68)",
+              fontSize: "17px",
+              lineHeight: 1.7,
+              maxWidth: "820px"
+            }}
+          >
+            View or download your complete catalogue range from one place. Large PDF files stay hosted separately while this page remains elegant, fast, and easy to navigate.
+          </p>
 
-          <a href={item.pdf} download>
-            <button>Download</button>
-          </a>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "16px",
+              marginTop: "28px"
+            }}
+          >
+            <div
+              style={{
+                borderRadius: "18px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.25)",
+                padding: "20px"
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.45)",
+                  marginBottom: "10px"
+                }}
+              >
+                Library
+              </div>
+              <div style={{ fontSize: "28px", fontWeight: 700 }}>3 Catalogues</div>
+            </div>
 
-          <a href={item.pdf} target="_blank">
-            <button>Preview</button>
-          </a>
+            <div
+              style={{
+                borderRadius: "18px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.25)",
+                padding: "20px"
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.45)",
+                  marginBottom: "10px"
+                }}
+              >
+                Hosting
+              </div>
+              <div style={{ fontSize: "22px", fontWeight: 600 }}>Vercel + Blob</div>
+            </div>
+
+            <div
+              style={{
+                borderRadius: "18px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(0,0,0,0.25)",
+                padding: "20px"
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "11px",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.45)",
+                  marginBottom: "10px"
+                }}
+              >
+                Recommended
+              </div>
+              <div style={{ fontSize: "22px", fontWeight: 600 }}>One preview at a time</div>
+            </div>
+          </div>
+        </section>
+
+        <div style={{ display: "grid", gap: "24px" }}>
+          {catalogues.map((item) => {
+            const expanded = openPreview === item.id;
+
+            return (
+              <section
+                key={item.id}
+                style={{
+                  overflow: "hidden",
+                  borderRadius: "28px",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.04)",
+                  backdropFilter: "blur(10px)",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
+                }}
+              >
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "minmax(320px, 420px) 1fr"
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "relative",
+                      minHeight: "280px",
+                      overflow: "hidden"
+                    }}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        opacity: 0.5
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background:
+                          "linear-gradient(135deg, rgba(70,70,70,0.7), rgba(0,0,0,0.86))"
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: "relative",
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        padding: "28px"
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          width: "fit-content",
+                          padding: "8px 14px",
+                          borderRadius: "999px",
+                          border: "1px solid rgba(255,255,255,0.12)",
+                          background: "rgba(255,255,255,0.08)",
+                          fontSize: "12px",
+                          letterSpacing: "0.16em",
+                          textTransform: "uppercase",
+                          color: "rgba(255,255,255,0.85)"
+                        }}
+                      >
+                        Catalogue
+                      </div>
+
+                      <div>
+                        <div
+                          style={{
+                            fontSize: "13px",
+                            color: "rgba(255,255,255,0.72)",
+                            marginBottom: "10px"
+                          }}
+                        >
+                          PDF brochure / product catalogue
+                        </div>
+                        <h2
+                          style={{
+                            fontSize: "38px",
+                            lineHeight: 1.15,
+                            margin: 0
+                          }}
+                        >
+                          {item.title}
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style={{ padding: "30px" }}>
+                    <p
+                      style={{
+                        fontSize: "16px",
+                        lineHeight: 1.8,
+                        color: "rgba(255,255,255,0.68)",
+                        maxWidth: "760px",
+                        marginTop: 0
+                      }}
+                    >
+                      {item.description}
+                    </p>
+
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "12px",
+                        marginTop: "22px"
+                      }}
+                    >
+                      <a
+                        href={item.pdf}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <button
+                          style={{
+                            borderRadius: "14px",
+                            padding: "14px 18px",
+                            border: "1px solid rgba(255,255,255,0.08)",
+                            background: "rgba(255,255,255,0.10)",
+                            color: "white",
+                            fontSize: "14px",
+                            cursor: "pointer"
+                          }}
+                        >
+                          View Catalogue
+                        </button>
+                      </a>
+
+                      <a href={item.pdf} download style={{ textDecoration: "none" }}>
+                        <button
+                          style={{
+                            borderRadius: "14px",
+                            padding: "14px 18px",
+                            border: "1px solid rgba(255,255,255,0.08)",
+                            background: "rgba(0,0,0,0.42)",
+                            color: "white",
+                            fontSize: "14px",
+                            cursor: "pointer"
+                          }}
+                        >
+                          Download PDF
+                        </button>
+                      </a>
+
+                      <button
+                        onClick={() =>
+                          setOpenPreview((current) => (current === item.id ? null : item.id))
+                        }
+                        style={{
+                          borderRadius: "14px",
+                          padding: "14px 18px",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          background: "transparent",
+                          color: "rgba(255,255,255,0.92)",
+                          fontSize: "14px",
+                          cursor: "pointer"
+                        }}
+                      >
+                        {expanded ? "Hide Preview" : "Preview on Page"}
+                      </button>
+                    </div>
+
+                    {expanded ? (
+                      <div
+                        style={{
+                          marginTop: "24px",
+                          overflow: "hidden",
+                          borderRadius: "22px",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          background: "rgba(0,0,0,0.3)"
+                        }}
+                      >
+                        <iframe
+                          src={`${item.pdf}#view=FitH`}
+                          title={item.title}
+                          style={{
+                            width: "100%",
+                            height: "70vh",
+                            border: "none",
+                            background: "white"
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </div>
-      ))}
+      </div>
     </main>
   );
 }
