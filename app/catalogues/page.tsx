@@ -55,7 +55,6 @@ export default function CataloguesPage() {
             boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
           }}
         >
-          {/* Top logo bar */}
           <div
             style={{
               display: "flex",
@@ -79,13 +78,11 @@ export default function CataloguesPage() {
               />
             </div>
 
-            <div>
-              <img
-                src="/images/pvr-logo.png"
-                alt="PVR Controls"
-                style={{ height: "42px", objectFit: "contain" }}
-              />
-            </div>
+            <img
+              src="/images/pvr-logo.png"
+              alt="PVR Controls"
+              style={{ height: "42px", objectFit: "contain" }}
+            />
           </div>
 
           <div
@@ -136,19 +133,20 @@ export default function CataloguesPage() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "minmax(360px, 480px) 1fr"
+                    gridTemplateColumns: "minmax(420px, 520px) 1fr",
+                    alignItems: "stretch"
                   }}
                 >
                   <div
                     style={{
                       position: "relative",
-                      minHeight: "380px",
+                      minHeight: "460px",
                       overflow: "hidden"
                     }}
                   >
                     <img
                       src={item.image}
-                      alt={item.title}
+                      alt=""
                       style={{
                         position: "absolute",
                         inset: 0,
@@ -163,7 +161,7 @@ export default function CataloguesPage() {
                         position: "absolute",
                         inset: 0,
                         background:
-                          "linear-gradient(135deg, rgba(70,70,70,0.7), rgba(0,0,0,0.86))"
+                          "linear-gradient(135deg, rgba(70,70,70,0.7), rgba(0,0,0,0.88))"
                       }}
                     />
                     <div
@@ -173,20 +171,19 @@ export default function CataloguesPage() {
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "space-between",
-                        padding: "28px"
+                        padding: "34px"
                       }}
                     >
                       <div
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
-                          gap: "8px",
                           width: "fit-content",
-                          padding: "8px 14px",
+                          padding: "10px 18px",
                           borderRadius: "999px",
                           border: "1px solid rgba(255,255,255,0.12)",
                           background: "rgba(255,255,255,0.08)",
-                          fontSize: "12px",
+                          fontSize: "13px",
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
                           color: "rgba(255,255,255,0.85)"
@@ -195,22 +192,22 @@ export default function CataloguesPage() {
                         Catalogue
                       </div>
 
-                      <div>
+                      <div style={{ maxWidth: "360px" }}>
                         <div
                           style={{
-                            fontSize: "13px",
+                            fontSize: "15px",
                             color: "rgba(255,255,255,0.72)",
-                            marginBottom: "10px"
+                            marginBottom: "14px"
                           }}
                         >
                           PDF brochure / product catalogue
                         </div>
                         <h2
                           style={{
-                            fontSize: "30px",
-                            lineHeight: 1.15,
+                            fontSize: "26px",
+                            lineHeight: 1.18,
                             margin: 0,
-                            maxWidth: "320px"
+                            wordBreak: "break-word"
                           }}
                         >
                           {item.title}
