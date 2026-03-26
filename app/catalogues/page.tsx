@@ -8,7 +8,7 @@ const catalogues = [
     title: "Industrial & Commercial Refrigeration",
     description:
       "Controllers, panels, monitoring systems, and solutions for cold rooms, refrigeration systems, and industrial cooling applications.",
-    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/industrial-and-commercial-refrigeration.pdf",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/Industrial%20And%20Commercial%20Refrigeration.pdf",
     image: "/images/refrigeration.jpg"
   },
   {
