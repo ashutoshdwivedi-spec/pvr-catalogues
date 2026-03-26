@@ -1,8 +1,14 @@
-export default function Home() {
-  return (
-    <main style={{ padding: "40px" }}>
-      <h1>Welcome to PVR Catalogues</h1>
-      <p>Go to /catalogues to view all PDFs.</p>
-    </main>
-  );
-}
+const catalogues = [
+  {
+    title: "Industrial & Commercial Refrigeration",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/industrial-and-commercial-refrigeration.pdf"
+  },
+  {
+    title: "Process Controllers & Automation",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/process-controllers-and-automation.pdf"
+  },
+  {
+    title: "Castle Ammonia Valves",
+    pdf: "https://xnacgp3gcfjnlu1g.public.blob.vercel-storage.com/catalogues/castle-ammonia-valves.pdf"
+  }
+];
