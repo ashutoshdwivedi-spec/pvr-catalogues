@@ -148,7 +148,7 @@ export default function CataloguesPage() {
                   <div
                     style={{
                       position: "relative",
-                      minHeight: isMobile ? "360px" : "420px",
+                      minHeight: isMobile ? "430px" : "420px",
                       overflow: "hidden"
                     }}
                   >
@@ -203,15 +203,15 @@ export default function CataloguesPage() {
                           position: "absolute",
                           left: isMobile ? "20px" : "30px",
                           right: isMobile ? "20px" : "30px",
-                          bottom: isMobile ? "34px" : "72px",
+                          bottom: isMobile ? "26px" : "72px",
                           maxWidth: isMobile ? "unset" : "360px"
                         }}
                       >
                         <div
                           style={{
-                            fontSize: isMobile ? "13px" : "14px",
+                            fontSize: isMobile ? "12px" : "14px",
                             color: "rgba(255,255,255,0.75)",
-                            marginBottom: "10px"
+                            marginBottom: "8px"
                           }}
                         >
                           PDF brochure / product catalogue
@@ -219,8 +219,8 @@ export default function CataloguesPage() {
 
                         <h2
                           style={{
-                            fontSize: isMobile ? "20px" : "22px",
-                            lineHeight: 1.18,
+                            fontSize: isMobile ? "18px" : "22px",
+                            lineHeight: 1.2,
                             margin: 0,
                             wordBreak: "break-word"
                           }}
