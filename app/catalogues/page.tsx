@@ -39,7 +39,7 @@ export default function CataloguesPage() {
         background:
           "radial-gradient(circle at top left, rgba(110,110,110,0.18), transparent 25%), linear-gradient(135deg, #030303 0%, #0f0f10 45%, #19191b 100%)",
         color: "white",
-        padding: "48px 24px",
+        padding: "32px 24px 48px",
         fontFamily: "Arial, sans-serif"
       }}
     >
@@ -49,12 +49,45 @@ export default function CataloguesPage() {
             border: "1px solid rgba(255,255,255,0.08)",
             background: "rgba(255,255,255,0.04)",
             borderRadius: "28px",
-            padding: "32px",
+            padding: "28px 32px 36px",
             marginBottom: "28px",
             backdropFilter: "blur(10px)",
             boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
           }}
         >
+          {/* Top logo bar */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              marginBottom: "28px",
+              flexWrap: "wrap"
+            }}
+          >
+            <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
+              <img
+                src="/images/subzero-logo.png"
+                alt="Sub Zero"
+                style={{ height: "42px", objectFit: "contain" }}
+              />
+              <img
+                src="/images/castle-logo.png"
+                alt="Castle"
+                style={{ height: "42px", objectFit: "contain" }}
+              />
+            </div>
+
+            <div>
+              <img
+                src="/images/pvr-logo.png"
+                alt="PVR Controls"
+                style={{ height: "42px", objectFit: "contain" }}
+              />
+            </div>
+          </div>
+
           <div
             style={{
               display: "inline-block",
@@ -82,93 +115,6 @@ export default function CataloguesPage() {
           >
             Explore all catalogues from one clean, premium single-page experience.
           </h1>
-
-          <p
-            style={{
-              marginTop: "18px",
-              color: "rgba(255,255,255,0.68)",
-              fontSize: "17px",
-              lineHeight: 1.7,
-              maxWidth: "820px"
-            }}
-          >
-            View or download your complete catalogue range from one place. Large PDF files stay hosted separately while this page remains elegant, fast, and easy to navigate.
-          </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "16px",
-              marginTop: "28px"
-            }}
-          >
-            <div
-              style={{
-                borderRadius: "18px",
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(0,0,0,0.25)",
-                padding: "20px"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.45)",
-                  marginBottom: "10px"
-                }}
-              >
-                Library
-              </div>
-              <div style={{ fontSize: "28px", fontWeight: 700 }}>3 Catalogues</div>
-            </div>
-
-            <div
-              style={{
-                borderRadius: "18px",
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(0,0,0,0.25)",
-                padding: "20px"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.45)",
-                  marginBottom: "10px"
-                }}
-              >
-                Hosting
-              </div>
-              <div style={{ fontSize: "22px", fontWeight: 600 }}>Vercel + Blob</div>
-            </div>
-
-            <div
-              style={{
-                borderRadius: "18px",
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(0,0,0,0.25)",
-                padding: "20px"
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.45)",
-                  marginBottom: "10px"
-                }}
-              >
-                Recommended
-              </div>
-              <div style={{ fontSize: "22px", fontWeight: 600 }}>One preview at a time</div>
-            </div>
-          </div>
         </section>
 
         <div style={{ display: "grid", gap: "24px" }}>
@@ -190,13 +136,13 @@ export default function CataloguesPage() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "minmax(320px, 420px) 1fr"
+                    gridTemplateColumns: "minmax(360px, 480px) 1fr"
                   }}
                 >
                   <div
                     style={{
                       position: "relative",
-                      minHeight: "280px",
+                      minHeight: "380px",
                       overflow: "hidden"
                     }}
                   >
@@ -261,9 +207,10 @@ export default function CataloguesPage() {
                         </div>
                         <h2
                           style={{
-                            fontSize: "38px",
+                            fontSize: "30px",
                             lineHeight: 1.15,
-                            margin: 0
+                            margin: 0,
+                            maxWidth: "320px"
                           }}
                         >
                           {item.title}
