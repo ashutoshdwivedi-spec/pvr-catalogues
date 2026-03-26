@@ -140,7 +140,7 @@ export default function CataloguesPage() {
                   <div
                     style={{
                       position: "relative",
-                      minHeight: "460px",
+                      minHeight: "420px",
                       overflow: "hidden"
                     }}
                   >
@@ -161,17 +161,17 @@ export default function CataloguesPage() {
                         position: "absolute",
                         inset: 0,
                         background:
-                          "linear-gradient(135deg, rgba(70,70,70,0.7), rgba(0,0,0,0.88))"
+                          "linear-gradient(135deg, rgba(70,70,70,0.62), rgba(0,0,0,0.88))"
                       }}
                     />
+
                     <div
                       style={{
                         position: "relative",
                         height: "100%",
                         display: "flex",
                         flexDirection: "column",
-                        justifyContent: "space-between",
-                        padding: "34px"
+                        padding: "26px 30px"
                       }}
                     >
                       <div
@@ -186,26 +186,34 @@ export default function CataloguesPage() {
                           fontSize: "13px",
                           letterSpacing: "0.16em",
                           textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.85)"
+                          color: "rgba(255,255,255,0.85)",
+                          marginBottom: "180px"
                         }}
                       >
                         Catalogue
                       </div>
 
-                      <div style={{ maxWidth: "360px" }}>
+                      <div
+                        style={{
+                          maxWidth: "360px",
+                          marginTop: "auto",
+                          marginBottom: "18px"
+                        }}
+                      >
                         <div
                           style={{
-                            fontSize: "15px",
-                            color: "rgba(255,255,255,0.72)",
-                            marginBottom: "14px"
+                            fontSize: "14px",
+                            color: "rgba(255,255,255,0.75)",
+                            marginBottom: "10px"
                           }}
                         >
                           PDF brochure / product catalogue
                         </div>
+
                         <h2
                           style={{
-                            fontSize: "26px",
-                            lineHeight: 1.18,
+                            fontSize: "24px",
+                            lineHeight: 1.2,
                             margin: 0,
                             wordBreak: "break-word"
                           }}
